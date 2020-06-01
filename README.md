@@ -10,7 +10,7 @@ ssh -Y login_id@hoffman2.idre.ucla.edu
 
 2. Request an interactive session. An example of a 4-hour interactive session can be found below. More information can be found here: https://www.hoffman2.idre.ucla.edu/computing/interactive-session/. 
 ```cpp
-qrsh -l h_rt=4:00:00,h_data=4G
+qrsh -l h_rt=4:00:00,h_data=12G
 ```
 
 3. Load COMSOL into the workspace 
