@@ -36,3 +36,8 @@ Alternatively, to run in parallel use
 comsol.q.parallel
 ```
 In both cases, follow to menu to build the command file (as you would with the job.q menu), and submit the job. The hoffman2 description for job submission can be found here - https://www.hoffman2.idre.ucla.edu/comsol/. 
+
+
+
+
+Note: process meant to link with code found here: https://github.com/admal002/Diffuse-interface-polycrystal-plasticity
