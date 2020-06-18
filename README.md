@@ -46,9 +46,10 @@ comsol.q.parallel
 In both cases, follow to menu to build the command file (as you would with the job.q menu), and submit the job. The hoffman2 description for job submission can be found here - https://www.hoffman2.idre.ucla.edu/comsol/. 
 
 ## How-to : Basic Post-Processing of COMSOL Data
-One the .mph file competed evaluation through the COMSOL software, several different avenues can be taken to analyze the initial microstructure and resulting structural propoerty evolution. 
+Onec the .mph file competed evaluation through the COMSOL software, several different avenues can be taken to analyze the initial microstructure and resulting structural propoerty evolution. 
 
-### Firstly, the grain structure of the initial cube can be observed. This step could actually take place prior to running the .mph file, so long as the grain orientations have been pre-loaded into COMSOL. Follow the steps of:
+
+Firstly, the grain structure of the initial cube can be observed. This step could actually take place prior to running the .mph file, so long as the grain orientations have been pre-loaded into COMSOL. Follow the steps of:
 
 1. Click on Interpolation 1/2/3, under global definitions
 2. "Create Plot" (makes a new "3D plot group")
@@ -59,7 +60,8 @@ One the .mph file competed evaluation through the COMSOL software, several diffe
 
 <img src="https://github.com/cameronmcelfresh/images/blob/master/grain_orientation_comsol.png" width="700">
 
-### Next, it may be of interest to observe many of the spatially distributed variables that were derived from the COMSOL simulation. If dislocation density were of interst, for example, follow the steps below. The same procedure would be possible for any other spatially distributed variable or derived value. 
+Next, it may be of interest to observe many of the spatially distributed variables that were derived from the COMSOL simulation. If dislocation density were of interst, for example, follow the steps below. The same procedure would be possible for any other spatially distributed variable or derived value. 
+
 
 1. Click on the "Derived Values" tab
 2. Click on "Volume", which appears to be a filled in 3D cube in the toolbar
