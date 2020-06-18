@@ -12,6 +12,10 @@ ssh -Y login_id@hoffman2.idre.ucla.edu
 ```cpp
 qrsh -l h_rt=4:00:00,h_data=12G
 ```
+For access to COMSOL 5.5 if you have high-performance nodes, use
+```cpp
+qrsh -l rh7,h_data=20G
+```
 
 3. Load COMSOL into the workspace 
 ```cpp
@@ -24,6 +28,10 @@ comsol
 If this GUI crashes, try
 ```cpp
 comsol -3Drend sw
+```
+Or 
+```cpp
+comsol &
 ```
 5. Given a minute or two, the COMSOL GUI should open. From here, you can use File -> Load File -> select the poly_cp.mph file. The simulation parameters can be altered by selecting the desired varaible tab. Once all desired parameters have been updated, you can hit "compute" to start the simulation. 
 
@@ -49,7 +57,7 @@ One the .mph file competed evaluation through the COMSOL software, several diffe
 5. For expressions, use the drop down selection menu to select Global Def->Functions-> qi1
 6. Finally, click "plot". Then delete the plane data one tab above for easier viewing. The structure should appeear as something similar to the image shown below:
 
-<img src="https://github.com/cameronmcelfresh/images/blob/master/grain_orientation_comsol.png" width="500">
+<img src="https://github.com/cameronmcelfresh/images/blob/master/grain_orientation_comsol.png" width="700">
 
 ### Next, it may be of interest to observe many of the spatially distributed variables that were derived from the COMSOL simulation. If dislocation density were of interst, for example, follow the steps below. The same procedure would be possible for any other spatially distributed variable or derived value. 
 
@@ -61,6 +69,6 @@ One the .mph file competed evaluation through the COMSOL software, several diffe
 6. Under the expressions tab, use the drop down red and green arrows to select the variable of interest. For derived values follow the path of Component 1 -> Definitions -> Variables -> (Dislocation Density)
 7. Finally, click plot and the 3D volume should populate with an image similar to the one below. 
 
-<img src="https://github.com/cameronmcelfresh/images/blob/master/dislocation_density_comsol.png" width="500">
+<img src="https://github.com/cameronmcelfresh/images/blob/master/dislocation_density_comsol.png" width="700">
 
 Note: process meant to link with code found here: https://github.com/admal002/Diffuse-interface-polycrystal-plasticity
