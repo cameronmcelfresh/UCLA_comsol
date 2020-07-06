@@ -73,6 +73,9 @@ If dislocation density were of interst, for example, follow the steps below. The
 6. Under the expressions tab, use the drop down red and green arrows to select the variable of interest. For derived values follow the path of Component 1 -> Definitions -> Variables -> (Dislocation Density)
 7. Finally, click plot and the 3D volume should populate with an image similar to the one below. 
 
+<img src="https://github.com/cameronmcelfresh/images/blob/master/dislocation_density_comsol.png" width="700">
+
+
 # Plotting the Stress-Strain Curve
 The default loading conditions of the poly_cp.mph file is in the xx direction, but the process can easily be converted to whatever reference frame is used.
 
