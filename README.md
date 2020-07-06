@@ -46,21 +46,23 @@ comsol.q.parallel
 In both cases, follow to menu to build the command file (as you would with the job.q menu), and submit the job. The hoffman2 description for job submission can be found here - https://www.hoffman2.idre.ucla.edu/comsol/. 
 
 ## How-to : Basic Post-Processing of COMSOL Data
-Onec the .mph file finishes being run through the COMSOL software, several different avenues can be taken to analyze the initial microstructure and resulting structural propoerty evolution. 
+Once the .mph file finishes being run through the COMSOL software, several different avenues can be taken to analyze the initial microstructure and resulting structural propoerty evolution. 
 
 
-Firstly, the grain structure of the initial cube can be observed. This step could actually take place prior to running the .mph file, so long as the grain orientations have been pre-loaded into COMSOL. Follow the steps of:
+# Plotting Grain Structure 
+This step could take place prior to running the .mph file, so long as the grain orientations have been pre-loaded into COMSOL. Follow the steps of:
 
 1. Click on Interpolation 1/2/3, under global definitions
 2. "Create Plot" (makes a new "3D plot group")
 3. Click on "Volume", which appears to be a filled in 3D cube in the toolbar
-4. Under Dataset, seelct "From Parent"
+4. Under Dataset, select "From Parent"
 5. For expressions, use the drop down selection menu to select Global Def->Functions-> qi1
 6. Finally, click "plot". Then delete the plane data one tab above for easier viewing. The structure should appeear as something similar to the image shown below:
 
 <img src="https://github.com/cameronmcelfresh/images/blob/master/grain_orientation_comsol.png" width="700">
 
-Next, it may be of interest to observe many of the spatially distributed variables that were derived from the COMSOL simulation. If dislocation density were of interst, for example, follow the steps below. The same procedure would be possible for any other spatially distributed variable or derived value. 
+# Plotting Spatially distributed variables
+If dislocation density were of interst, for example, follow the steps below. The same procedure would be possible for any other spatially distributed variable or derived value. 
 
 
 1. Click on the "Derived Values" tab
@@ -71,6 +73,20 @@ Next, it may be of interest to observe many of the spatially distributed variabl
 6. Under the expressions tab, use the drop down red and green arrows to select the variable of interest. For derived values follow the path of Component 1 -> Definitions -> Variables -> (Dislocation Density)
 7. Finally, click plot and the 3D volume should populate with an image similar to the one below. 
 
-<img src="https://github.com/cameronmcelfresh/images/blob/master/dislocation_density_comsol.png" width="700">
+# Plotting the Stress-Strain Curve
+The default loading conditions of the poly_cp.mph file is in the xx direction, but the process can easily be converted to whatever reference frame is used.
+
+1. Right click on the "Derived Values" tab
+2. Navigate to the "Line Average" selection
+3. Select the 4 edges that lie in the x-y plane and are perpendicular to the xx direction
+4. Under the list of expressions to compute, add in the expressions for F11, F12, F13, F21, F22, F23, F31, F32, F33, W11. 
+5. Click "Evaluate" so COMSOL can compute the averaged values across the areas selected. 
+6. In the new table that is created in the lower right-hand corner of the screen, click the "copy headers and table to clipboard" selection. Paste the data into an empty text file. 
+7. Calculate the total strain tensor as E = (F'F -I)/2 where F' is the transpose of the deformation tensor F. Where F = [F11, F12, F13; F21, F22, F23; F31, F32, F33]. Then plot the xx component of the E tensor against the intermediate stress value W11. 
+8. Alternatively, the data can be loaded into MATLB and the stress_plotter.m script can be used. 
+
+<img src="https://github.com/cameronmcelfresh/images/blob/master/stress_strain_test.png" width="700">
+
+
 
 Note: process meant to link with code found here: https://github.com/admal002/Diffuse-interface-polycrystal-plasticity
