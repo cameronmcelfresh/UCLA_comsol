@@ -49,7 +49,7 @@ In both cases, follow to menu to build the command file (as you would with the j
 Once the .mph file finishes being run through the COMSOL software, several different avenues can be taken to analyze the initial microstructure and resulting structural propoerty evolution. 
 
 
-# Plotting Grain Structure 
+### Plotting Grain Structure 
 This step could take place prior to running the .mph file, so long as the grain orientations have been pre-loaded into COMSOL. Follow the steps of:
 
 1. Click on Interpolation 1/2/3, under global definitions
@@ -61,7 +61,7 @@ This step could take place prior to running the .mph file, so long as the grain 
 
 <img src="https://github.com/cameronmcelfresh/images/blob/master/grain_orientation_comsol.png" width="700">
 
-# Plotting Spatially distributed variables
+### Plotting Spatially distributed variables
 If dislocation density were of interst, for example, follow the steps below. The same procedure would be possible for any other spatially distributed variable or derived value. 
 
 
@@ -76,7 +76,7 @@ If dislocation density were of interst, for example, follow the steps below. The
 <img src="https://github.com/cameronmcelfresh/images/blob/master/dislocation_density_comsol.png" width="700">
 
 
-# Plotting the Stress-Strain Curve
+### Plotting the Stress-Strain Curve
 The default loading conditions of the poly_cp.mph file is in the xx direction, but the process can easily be converted to whatever reference frame is used.
 
 1. Right click on the "Derived Values" tab
@@ -89,6 +89,17 @@ The default loading conditions of the poly_cp.mph file is in the xx direction, b
 8. Alternatively, the data can be loaded into MATLB and the stress_plotter.m script can be used. 
 
 <img src="https://github.com/cameronmcelfresh/images/blob/master/stress_strain_test.png" width="700">
+
+### Plotting Geometrically Necessary Dislocations
+
+1. Go to the results section of the output file and click the "Volume" button (filled-in cube in the upper toolbar)
+2. In box for the expression, specify the following for the norm of the G tensor: 
+```cpp
+sqrt(G11^2 + G12^2 + G13^2 + G21^2 + G22^2 + G23^2 + G31^2 + G32^2 + G33^2)
+```
+3. Hit plot! The result should look similar to the image below:
+
+<img src="https://github.com/cameronmcelfresh/images/blob/master/gnd_comsol.png" width="700">
 
 
 
