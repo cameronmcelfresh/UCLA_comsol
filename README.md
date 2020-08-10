@@ -45,6 +45,12 @@ comsol.q.parallel
 ```
 In both cases, follow to menu to build the command file (as you would with the job.q menu), and submit the job. The hoffman2 description for job submission can be found here - https://www.hoffman2.idre.ucla.edu/comsol/. 
 
+If accessing the comsol.q menu fails, use the qsub approach of:
+```cpp
+qsub -N MYCOMSOLMPHFILE /u/local/apps/submit_scripts/submit_comsol_multithreaded.sh
+```
+where MYCOMSOLMPHFILE is the name or path to your comsol file without the trailing .mph. 
+
 ## How-to : Basic Post-Processing of COMSOL Data
 Once the .mph file finishes being run through the COMSOL software, several different avenues can be taken to analyze the initial microstructure and resulting structural propoerty evolution. 
 
